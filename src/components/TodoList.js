@@ -16,4 +16,4 @@ function TodoList({ tasks, onToogleComplete, onDeleteTask}){
     );
 }
 
-export default TodoList
+export default TodoList;

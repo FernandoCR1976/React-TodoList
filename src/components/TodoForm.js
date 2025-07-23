@@ -4,11 +4,12 @@ function TodoForm({onAddTask}) {
     const [taskText, setTaskText] = useState('');
 
     const handleSubmit = (e)=>{
-        e.prevent.default();//Previene que la pagina se cargue vacia
+        e.preventDefault();//Previene que la pagina se cargue vacia
         if (taskText.trim()){//Revisa que el texto no este vacio
             onAddTask(taskText);//Llamando a la funcion padre
             setTaskText('');
         }
+        console.log('Añadiendo tarea:', taskText);
     };
     return(
         <form onSubmit={handleSubmit}>
