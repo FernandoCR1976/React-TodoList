@@ -13,7 +13,18 @@
 
 
 }
-
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%); /* Fondo degradado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 
 .App{
@@ -87,3 +98,85 @@ button:active {
   box-shadow: var(--shadow-inset);
   background: linear-gradient(135deg, var(--secondary-color)) 0% , var(--primary-color) 100%;
 }
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background-color: var(--bg-light);
+  padding: var(--padding-md);
+  margin-bottom: 10px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light); /* Sombra convexa */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1em;
+  word-break: break-word; /* Rompe palabras largas para que no se desborden */
+}
+
+li button {
+  margin-left: 10px;
+  padding: 8px 15px; /* Botones más pequeños dentro de la lista */
+  font-size: 0.85em;
+  background: var(--bg-dark); /* Color de fondo más neutro para los botones de la lista */
+  color: var(--text-dark);
+  box-shadow: 2px 2px 5px #babecc, -2px -2px 5px #ffffff; /* Sombra más sutil */
+}
+
+li button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+li button:active {
+  transform: translateY(0);
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff;
+}
+
+/* Estilo para las tareas completadas */
+li[style*="text-decoration: line-through"] {
+  color: #888; /* Texto más claro para tareas completadas */
+  background-color: var(--bg-dark); /* Fondo ligeramente más oscuro */
+  box-shadow: var(--shadow-inset); /* Efecto cóncavo para indicar completado */
+  transition: all 0.3s ease;
+}
+
+li[style*="text-decoration: line-through"] button {
+  background: var(--bg-light);
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff;
+}
+
+/* Responsive básico */
+@media (max-width: 600px) {
+  .App {
+    padding: 20px;
+    border-radius: 0; /* Sin bordes redondeados en pantallas pequeñas */
+    box-shadow: none; /* Sin sombra en pantallas pequeñas */
+  }
+
+  form {
+    flex-direction: column; /* Input y botón en columna en móviles */
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  li {
+    flex-direction: column; /* Tarea y botones en columna en móviles */
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  li button {
+    margin-top: 8px;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
